@@ -1,0 +1,100 @@
+<app-title [titulo]="titulo()"/>
+
+@if (usuario()) {
+    <section>
+        <div>
+            <h3>{{usuario()?.nombres}} {{usuario()?.apellidos}}</h3>                        
+        </div>
+
+        <section
+            class="bg-slate-200 p-5 shadow-md sm:rounded-lg mt-5"
+        >
+        
+            <form
+                class="max-w-screen-xl mx-auto" 
+                [formGroup]="formUsuario" (ngSubmit)="handleSubmit()"
+            >
+                <section
+                >
+                <div class="mb-5">
+                    <label for="names" class="block mb-2 text-sm font-medium
+                    text-gray-900 dark:text-black">Nombres</label>
+                    <input 
+                    class="border border-gray-300 
+                    text-gray-900 
+                    text-sm rounded-lg 
+                    focus:ring-blue-500 
+                    focus:border-blue-500 block w-full p-2.5
+                    dark:bg-gray-700 dark:border-gray-600
+                    dark:placeholder-gray-400 dark:text-white 
+                    dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                    placeholder="Primer y Segundo Nombre" required
+                    id="names" type="text" formControlName="nombres"/>
+                    
+
+
+                </div>
+
+                <div class="mb-5">
+                    <label for="names" class="block mb-2 text-sm font-medium
+                    text-gray-900 dark:text-black">Apellidos</label>
+                    <input 
+                    class="border border-gray-300 
+                    text-gray-900 
+                    text-sm rounded-lg 
+                    focus:ring-blue-500 
+                    focus:border-blue-500 block w-full p-2.5
+                    dark:bg-gray-700 dark:border-gray-600
+                    dark:placeholder-gray-400 dark:text-white 
+                    dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                    placeholder="Primer y Segundo Apellido" required
+                    id="names" type="text" formControlName="apellidos"/>   
+                </div> 
+
+                <div class="mb-5">
+                    <label for="nick" class="block mb-2 text-sm font-medium
+                    text-gray-900 dark:text-black">Nick Name</label>
+                    <input 
+                    class="border border-gray-300 
+                    text-gray-900 
+                    text-sm rounded-lg 
+                    focus:ring-blue-500 
+                    focus:border-blue-500 block w-full p-2.5
+                    dark:bg-gray-700 dark:border-gray-600
+                    dark:placeholder-gray-400 dark:text-white 
+                    dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                    placeholder="Nick"
+                    id="nick" type="text" formControlName="nick_name"/>   
+                </div>   
+
+                <div class="mb-5">
+                    <label for="nick" class="block mb-2 text-sm font-medium
+                    text-gray-900 dark:text-black">Fecha Nacimiento</label>
+                    <input 
+                    class="border border-gray-300 
+                    text-gray-900 
+                    text-sm rounded-lg 
+                    focus:ring-blue-500 
+                    focus:border-blue-500 block w-full p-2.5
+                    dark:bg-gray-700 dark:border-gray-600
+                    dark:placeholder-gray-400 dark:text-white 
+                    dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                    placeholder="Nick"
+                    id="nick" type="date" formControlName="fecha_nacimiento"/>   
+                </div>        
+                
+                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Crear usuario
+                </button>
+            </section>
+        
+
+            </form>
+
+        </section>
+    </section>
+} @else {
+    <h1>
+        Información de usuario no disponible.
+    </h1>
+}

@@ -1,0 +1,36 @@
+<app-title titulo="Defer Views"/>
+
+<section class="grid grid-cols-1">
+    @defer(){
+        <app-heavy-loaders-slow classCss="bg-blue-200"/>
+    } @placeholder {
+        <p class="h-[600px] w-full 
+        rounded-md
+        bg-gradient-to-r from-gray-50 to-gray-300 animate-pulse">
+            Cargando...
+        </p>
+    }
+    
+    @defer(on viewport){
+        <app-heavy-loaders-slow classCss="bg-purple-200"/>
+    } @placeholder {
+        <p class="h-[600px] w-full 
+        rounded-md
+        bg-gradient-to-r from-gray-50 to-gray-300 animate-pulse">
+            Cargando...
+        </p>
+    }
+    
+
+    @defer(on viewport){
+        <app-heavy-loaders-slow classCss="bg-green-200"/>
+    } @placeholder {
+        <p class="h-[600px] w-full 
+        rounded-md
+        bg-gradient-to-r from-gray-50 to-gray-300 animate-pulse">
+            Cargando...
+        </p>
+    }
+        
+
+</section>

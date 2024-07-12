@@ -1,0 +1,103 @@
+<app-title titulo="Defer Trigger" />
+
+<section>
+    <h1 class="text-xl">
+        Interacciones
+    </h1>
+
+    <hr class="my-2">
+    
+    @defer(on interaction){
+        <app-heavy-loaders-fast classCss="bg-blue-200 h-20 ">
+            <span>
+                On Interaction 
+            </span>
+        </app-heavy-loaders-fast>
+    } @placeholder {
+        <div class="w-full h-20 bg-purple-500">
+            Click en el div
+        </div>
+    }
+
+</section>
+
+
+<section>
+
+    <hr class="my-2">
+    
+    <button 
+        #btnInteraction
+        class="p-2 bg-blue-400 hover:bg-blue-600 transition-all rounded text-white my-2">
+        Click me
+    </button>
+
+    @defer(on interaction(btnInteraction)){
+        <app-heavy-loaders-fast classCss="bg-blue-200 h-20 ">
+            <span>
+                On Interaction 
+            </span>
+        </app-heavy-loaders-fast>
+    } @placeholder {
+        <div class="w-full h-20 bg-green-300">
+            Click en el boton
+        </div>
+    }
+
+</section>
+
+
+
+<section>
+
+    <hr class="my-2">
+    
+    @defer(on hover){
+        <app-heavy-loaders-fast classCss="bg-blue-200 h-20 ">
+            <span>
+                On Interaction 
+            </span>
+        </app-heavy-loaders-fast>
+    } @placeholder {
+        <div class="w-full h-20 bg-green-300">
+            Hover en el div
+        </div>
+    }
+
+</section>
+
+<section>
+
+    <hr class="my-2">
+    
+    @defer(on immediate){
+        <app-heavy-loaders-fast classCss="bg-blue-200 h-20 ">
+            <span>
+                On Immediate 
+            </span>
+        </app-heavy-loaders-fast>
+    } @placeholder {
+        <div class="w-full h-20 bg-green-300">
+            Inmediato
+        </div>
+    }
+
+</section>
+
+<section>
+
+    <hr class="my-2">
+    
+    @defer(on timer(2000)){
+        <app-heavy-loaders-fast classCss="bg-red-200 h-20 ">
+            <span>
+                On Interaction 
+            </span>
+        </app-heavy-loaders-fast>
+    } @placeholder {
+        <div class="w-full h-20 bg-green-300">
+            2 segundo
+        </div>
+    }
+
+</section>
